@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block title %}Emotioanl Health Information{% endblock %}
+
+    {% block navbar %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/fyp_project/homepage">Twitter Analysis</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="/fyp_project/profile"><i class="fa fa-user fa-fw"></i> View User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/editProfile"><i class="fa fa-gear fa-fw"></i> Edit User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/changePassword"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/fyp_project/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            {% endblock %}
+
+            {% block sidenavbar %}
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/fyp_project/homepage"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+						<li>
+							<a href ="/fyp_project/Cyberbullying_info"><i class = "fa fa-file-text fa-fw"></i> Cyberbullying Information</a>
+						</li>
+						<li>
+							<a href ="/fyp_project/emotionalHealthInfo"><i class = "fa fa-file-text fa-fw"></i> Emotional Health Information</a>
+						</li>
+						<li>
+							<a href ="/fyp_project/about"><i class = "fa fa-file-text fa-fw"></i> About the Application</a>
+						</li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+          {% endblock %}
+
+          {% block pageheading %}Emotional Health Information {% endblock %}
+          {% block bodyblock %}
+          <p>
+					Emotional health is a state of positive psychological functioning. It can be thought of as an extension of mental
+					health; it's the "optimal functioning" end of the thoughts, feelings, and behaviours that make up both our inner
+					and outer worlds. It includes an overall experience of wellness in what we think, feel, and do through both the
+					highs and lows of life.
+					</p>
+
+					<p>In a successful attempt to provide a definition of emotional health, the organization BelongTo.org quotes the
+					Mental Health Foundation: emotional health is "a positive state of wellbeing which enables an individual to be
+					able to function in society and meet the demands of everyday life."
+					</p>
+
+					<p>
+					In Ireland emotional health effects 1 in 10 children and young people. These include depression, conduct changes,
+					and anxiety among other things. In the vast majority of cases the effect on emotional health is due to what is
+					currently happening in their lives.
+					</p>
+
+					<p>In children emotional health and wellbeing is as important as physical health. Having a good positive mental
+					health as a child can help children create well rounded with the ability to tackle anything life has to offer.
+					However a negative emotional health during childhood can severely damage the development of a child and cause a
+					lasting effect on their lives.
+					</p>
+{% endblock %}

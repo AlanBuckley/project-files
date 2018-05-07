@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block title %}About{% endblock %}
+
+    {% block navbar %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/fyp_project/homepage">Twitter Analysis</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="/fyp_project/profile"><i class="fa fa-user fa-fw"></i> View User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/editProfile"><i class="fa fa-gear fa-fw"></i> Edit User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/changePassword"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/fyp_project/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            {% endblock %}
+
+            {% block sidenavbar %}
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/fyp_project/homepage"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+						<li>
+							<a href ="/fyp_project/Cyberbullying_info"><i class = "fa fa-file-text fa-fw"></i> Cyberbullying Information</a>
+						</li>
+						<li>
+							<a href ="/fyp_project/emotionalHealthInfo"><i class = "fa fa-file-text fa-fw"></i> Emotional Health Information</a>
+						</li>
+						<li>
+							<a href ="/fyp_project/about"><i class = "fa fa-file-text fa-fw"></i> About the Application</a>
+						</li>
+
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+          {% endblock %}
+
+
+          {% block pageheading %}About Us{% endblock %}
+          {% block bodyblock %}
+          <p>This application is the part of a final year project, Identifying Cyberbullying and Analysing Emotions on Twitter.
+					</p>
+          <p> The objective of the project is to allow parents/guardians/carers of children to monitor the social media actviity of their
+            children. Currently the application only works with Twitter. Future work of this project is to be able to detect cyberbullying
+            and analyse the emotions displayed in social media posts across multiple different social media platforms.
+          </p>
+          <h3>Motivation</h3>
+          <p>Over  the  last  two  decades  and  the  span  of  my  life  time  technology  has  grown  at  anunimaginable rate in every
+            area you could think.  Be that with the development of smartphones to SpaceXs reusable rockets to artificial intelligence,
+            technology has come a farway but perhaps one of the biggest impacts of this technological growth has been thedevelopment of
+            social media.  Social media has changed the way the everyday commonperson  lives,  it  has  changed  the  way  we  socialization,
+            our  politics  (evident  with  the2016 Trump vs Clinton US election, our businesses (massive social media campaigns to advertise
+            products, it is estimated over 35 billion will be spent advertising on social media in 2017).  Social media allows us to convey
+            our beliefs and our opinion not to just ourfriends and family but to the whole world.  However, with these great advancements in
+            social media there are some negative by-products, one of the biggest being cyberbullying. A feature of social media platforms such
+            as Facebook and Twitter is the ability to beanonymous. A fresh account can be created in minutes all you need to do is enter a
+            name and an email address, a name which can be faked and an email address that youcan create in minutes.</p>
+            <p>Bullying is nothing new,
+            it has been effecting the lives of millions of people each year,not only causing immediate problems such as depression, low self-esteem,
+            anxiety, feeling of isolation, there is also a direct correlation between bullying and lower academic performance.
+            Bullying is not only effecting people in the present but also through out the  rest  of  their  lives.   People  often  turn  a  blind
+            eye  to  cyberbullying  and  think  it  a lower and less harmful form of bullying, however this is completely false.  Cyberbully-ing
+            can be as harmful and in some cases more harmful than verbal/physical bullying. People often dont take cyberbullying as serious as they
+            should with their response to cyberbullying being Turn off the screen or Dont pay attention.  Cyberbullying is a very persistent form of
+            bullying.  Unlike conventional bullying which takes place face to face usually during week days and school hours, cyberbullying can happen
+            anytime, children and teenagers use their smartphones and laptops on a daily basis this offers continuous and immediate interaction 24 hours a day.
+            Cyberbullying is also very permanent; the bullying takes place electronically and all interactions are saved (unless it is flagged
+            and removed).  There is also the problem of spotting cyberbullying, verbal/physical bullying takes place face to face where it can be seen
+            by others most notably parents and teacherswho can take action. Whereas with cyberbullying parents and teachers in many cases dont have access
+            to the platforms where the cyberbullying is taking place so it can go unnoticed.</p>
+            <p>Mental  wellness  and  emotion  health  are  also  very  important  issues  to  manage  withchildren.  Young kids and teenagers often find
+            it difficult to express and convey emotions,there can be a number of reasons for this but a main issue is that they are still developing
+            and do not know how to express themselves. Teenagers especially find it hard to express themselves and often bottle up
+            their emotions. However, our emotions control us andwith the rise of social media todays youth are using these new platforms to express their
+            opinions.  This gives an unprecedented access to their raw feelings and emotions whichcan be used to compile reports on their emotions.
+            With access to such reports parentscan help children with these emotions in doing so potentially preventing outbursts andin some cases
+            depression and worse.</p>
+            <p>My main motivation is to help people who suffer from bullying and are afraid of talking about it. During my time
+            in secondary school I have seen bullying take place through out every
+            single year which was dealt with by teachers and parents but at the same time social media started to become prominent.  While the
+            physical and verbal bullying inschool was being dealt with the cyberbullying was not.  If a bully could not get at a child during
+            school he would cyberbully them away from view of teachers and parents. During my time in secondary school this did not change and my
+            understanding from talking to younger students who were below me in the same school it has yet to change.I regret not speaking up about
+            what I saw taking place on social media while I was in secondary school but I want to develop this application to help the next generation
+            from experiencing what I witnessed.
+          </p>
+          <br></br>
+{% endblock %}

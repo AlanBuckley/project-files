@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block title %} Login {% endblock %}
+
+{% block navbar %}
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" >Twitter Analysis</a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="/fyp_project/profile"><i class="fa fa-user fa-fw"></i> View User Profile</a>
+                </li>
+                <li><a href="/fyp_project/changePassword"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                </li>
+                <li><a href="/fyp_project/editProfile"><i class="fa fa-gear fa-fw"></i> Edit User Profile</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="/fyp_project/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+{% endblock %}
+
+{% block sidenavbar %}
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+
+              <li>
+                <a href="/fyp_project/login"><i class = "fa fa-file-text fa-fw"></i>Login Page</a>
+              </li>
+{% endblock %}
+{% block bodyblock %}
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form  method ="post">
+                          {% csrf_token %}
+                      			{% if bad_details %}
+                      			<p><strong>Your username and/or password were incorrect!</strong></p>
+                      			{% elif disabled_account %}
+                      			<p><strong>Your Cyberbully Detection account is currently disabled; we can't log you in!</strong></p>
+                      			{% endif %}
+
+                            <!--{{ form.as_p }}-->
+                          <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+
+                                <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">Login</button>
+                              <!--  <a href="/fyp_project/homepage" class="btn btn-lg btn-success btn-block">Login2</a> -->
+								                <a href="/fyp_project/signup" class="btn btn-lg btn-primary btn-block">Sign Up</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+{% load static %}
+<script src='chart.js'></script>
+
+    {% block title %}Homepage{% endblock %}
+      {% block navbar %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/fyp_project/homepage">Twitter Analysis</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="/fyp_project/profile"><i class="fa fa-user fa-fw"></i> View User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/editProfile"><i class="fa fa-gear fa-fw"></i> Edit User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/changePassword"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/fyp_project/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            {% endblock %}
+            {% block sidenavbar %}
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/fyp_project/homepage"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+            						<li>
+            							<a href ="/fyp_project/Cyberbullying_info"><i class = "fa fa-file-text fa-fw"></i> Cyberbullying Information</a>
+            						</li>
+            						<li>
+            							<a href ="/fyp_project/emotionalHealthInfo"><i class = "fa fa-file-text fa-fw"></i> Emotional Health Information</a>
+            						</li>
+            						<li>
+            							<a href ="/fyp_project/about"><i class = "fa fa-file-text fa-fw"></i> About the Application</a>
+            						</li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        {% endblock %}
+
+        {% block pageheading %} Dashboard {% endblock %}
+        {% block bodyblock %}
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{nosocialmediamessages}}</div>
+                                    <div>Number of Tweets</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-3x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">%{{precision}}</div>
+                                    <div>Precision!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-3x"></i>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <div class="huge">%{{recall}}</div>
+                                    <div>Recall!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{totalTweets}}</div>
+                                    <div>Tweets in Classifier</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Emotion Analysis
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-red">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_sadness_str}}</div>
+                                              <div>Sadness Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-yellow">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_anticipation_str}}</div>
+                                              <div>Anticipation Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-yellow">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_disgust_str}}</div>
+                                              <div>Disgust Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-green">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_positive_str}}</div>
+                                              <div>Positive Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-red">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_anger_str}}</div>
+                                              <div>Anger Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-green">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_joy_str}}</div>
+                                              <div>Joy Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-red">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_fear_str}}</div>
+                                              <div>Fear Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-yellow">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_trust_str}}</div>
+                                              <div>Trust Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-red">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_negative_str}}</div>
+                                              <div>Negative Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                              <div class="panel panel-green">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-3">
+                                              <i class="fa fa-twitter-square fa-5x"></i>
+                                          </div>
+                                          <div class="col-xs-9 text-right">
+                                              <div class="huge">{{affective_cyber_count_list_surprise_str}}</div>
+                                              <div>Surprise Count</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-bar-chart-o fa-fw"></i> Cyberbullying Classifier
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                  <!-- /.panel-body -->
+                  </script>
+                  <div id="NB_bar" ></div>
+                  <script>
+                  Morris.Bar({
+                    element: 'NB_bar',
+                    data: [
+                      { y: 'Recall', a: {{recall}}},
+                      { y: 'Precison', a: {{precision}}},
+                      { y: 'F-Score', a: {{fScore}}},
+                    ],
+                    xkey: 'y',
+                    ykeys: ['a'],
+                    labels: ['Naive Bayes Classifier']
+                  });
+                  </script>
+
+                  <div id="donut-example"></div>
+                  <script>
+                  Morris.Donut({
+                    element: 'donut-example',
+                    data: [
+                      {label: "False Positives", value: {{false_positives}}},
+                      {label: "False Negatives", value: {{false_negatives}}},
+                      {label: "True Positives", value: {{true_positives}}},
+                      {label: "True Negatives", value: {{true_negatives}}}
+                    ],labelColor: '#060',
+                    colors: [
+                      '#0BA462',
+                      '#39B580',
+                      '#67C69D',
+                      '#95D7BB'
+                    ],
+                  });
+                </script>
+              </div>
+            </div>
+                            <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <i class="fa fa-bar-chart-o fa-fw"></i> Recent Tweets
+                                  </div>
+                                  <!-- /.panel-heading -->
+                                  <div class="panel-body">
+                        <!-- /.panel-body -->
+                        <table>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tweet</th>
+                            </tr>
+                            {% for tweet in twitterTweets %}
+                            <tr>
+                                <td><b>{{ tweet.id }}</b></td>
+                                <td>{{ tweet.cleanMessage }}
+                                <td>{{ tweet.message }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                  </div>
+
+        <br></br>
+        </div>
+        <!-- /#page-wrapper -->
+{% endblock %}
+
+{% block jscripts %}
+<!-- Resources -->
+
+
+{% endblock %}

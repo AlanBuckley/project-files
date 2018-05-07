@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block title %}Cyberbullying Information{% endblock %}
+
+    {% block navbar %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/fyp_project/homepage">Twitter Analysis</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="/fyp_project/profile"><i class="fa fa-user fa-fw"></i> View User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/editProfile"><i class="fa fa-gear fa-fw"></i> Edit User Profile</a>
+                        </li>
+                        <li><a href="/fyp_project/changePassword"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/fyp_project/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            {% endblock %}
+
+            {% block sidenavbar %}
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/fyp_project/homepage"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+						<li>
+							<a href ="/fyp_project/Cyberbullying_info"><i class = "fa fa-file-text fa-fw"></i> Cyberbullying Information</a>
+						</li>
+						<li>
+							<a href ="/fyp_project/emotionalHealthInfo"><i class = "fa fa-file-text fa-fw"></i> Emotional Health Information</a>
+						</li>
+						<li>
+							<a href ="/fyp_project/about"><i class = "fa fa-file-text fa-fw"></i> About the Application</a>
+						</li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+          {% endblock %}
+
+
+          {% block pageheading %}Cyberbullying {% endblock %}
+          {% block bodyblock %}
+          <p>Cyberbullying is bullying that takes place over digital services like mobile phones, computers and tablets.
+					Cyberbullying can occur through SMS, Text, and Apps, or online in social media, forums, or gaming where people
+					can view, participate in, or share content. The act of cyberbullying includes sending, posting, or sharing negative,
+					harmful, false, or mean content about someone else. It can include sharing personal or private information about
+					someone else causing embarrassment or humiliation. Some cyberbullying crosses the line into unlawful or criminal behaviour.</p>
+
+					<p> The most common places for cyberbullying to occur are:
+					<ul>
+						<li>Social Media (websites such as Twitter, Facebook, Snapchat and Instagram)</li>
+						<li>Instant Messaging (either text message or instant messaging applications such as WhatsApp or Viber)</li>
+					</ul>
+					</p>
+
+					<h3><b> Concerns of Cyberbullying </b></h3>
+					<p>The biggest concerns we face with cyberbullying is where and how it takes place.
+						cyberbullying unlike conventional bullying takes place online using digital devices.
+						Conventional bullying usually take place during work/school hours and happens face to face,
+						whereas cyberbullying can happen 24/7 due to our connection and reliance on digital devices.
+						Cyberbullying is a very persistent form of bullying, digital devices offer the ability to
+						communicate immediately 24 hours a day, making cyberbullying very difficult to escape from.
+					</p>
+
+					<p> Another concern is the nature of the online world we live in. The current world is dominated
+					and controlled by the internet, everything we say and do is stored somewhere online, in most cases
+					information communicated electronically is public for anybody to see. If cyberbullying attacks are
+					not reported then there is no reason for think that they would be removed meaning that the victim
+					can be haunted by bullying into the future. The public nature of our information can also cause
+					negative online reputations which could further effect both the bully and victim in the future.
+					To summarize this point, cyberbullying is very permanent and can cause damage to a person life
+					into the future.
+					</p>
+
+					<p> Perhaps the biggest concern for parents when it comes to cyberbullying is recognizing that
+					it is taking place. In many cases parents and teachers are not on social media platforms or in
+					instant messaging apps, and if they are it is unlikely that they would be included in any
+					cyberbullying activities, so it can be near impossible for them to spot cyberbullying is taking
+					place unless they are informed by the victim or another individual.
+					</p>
+
+					<h3><b>Tips for parents for dealing with Cyberbullying</b></h3>
+					<p>
+					<ul>
+						<li>Monitor a child’s online activity. An example of this is limiting their time spent on
+						digital devices to keep them away from potential cyberbullying. </li>
+						<li>Talk about online issues such as cyberbullying with your children and teach them of
+						the dangers associated with these issues. </li>
+						<li>Communicate with your child, tell them your concerns, why there is a limit on use
+						with digital devices, get your child involved in setting the rules around use of digital devices.</li>
+						<li>Keep a level head if your child is being cyberbullied. Do not overreact and make them feel like
+						it is somehow their fault, communicate and find out information about how long it has been taking place
+						and who the bully is. Be supportive and comfort them. However it is important to not under-react to the
+						situation also, the effects of bullying can leave deep emotional scars that can effect a child’s development.</li>
+						<li>Do not completely take digital devices away from your child if they are being cyberbullied, this
+						may scare the child causing them to be more secretive in the future.</li>
+						<li>If there is a threat that the cyberbullying is getting worse or becoming physical bullying
+						then escalate the matter to deal with the problem.</li>
+					</ul>
+					</p>
+
+					<h3><b>Tips for children for dealing with Cyberbullying</b></h3>
+					<p>
+					<ul>
+						<li>Never respond to any form of cyberbullying, don’t interact with the bully as it will only
+						encourage them to continue their bullying.</li>
+						<li>If you are being bullied tell an adult, whether that is a parent or teacher, tell someone
+						immediately and begin to solve the problem.</li>
+						<li>Save all messages as a form of proof that the bullying is taking place.</li>
+						<li>If you know of any cyberbullying that is taking place do not hide, tell someone about what you know. </li>
+					<ul>
+					</p>
+          <br>
+        </br>
+{% endblock %}
