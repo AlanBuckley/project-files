@@ -29,7 +29,7 @@ SQLAlchemy==1.2.7
 tabulate==0.7.5
 termcolor==1.1.0
 tweepy==3.6.0
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.2.0
 virtualenvwrapper-win==1.2.5
 websocket-client==0.47.0
